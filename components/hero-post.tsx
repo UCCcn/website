@@ -19,7 +19,7 @@ const HeroPost = ({
   date,
   excerpt,
   author,
-  slug,
+  slug
 }: Props) => {
   return (
     <section>

@@ -19,7 +19,7 @@ const PostPreview = ({
   date,
   excerpt,
   author,
-  slug,
+  slug
 }: Props) => {
   return (
     <div>
