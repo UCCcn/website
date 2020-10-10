@@ -1,6 +1,6 @@
 import Container from './container'
 import cn from 'classnames'
-import { EXAMPLE_PATH } from '../lib/constants'
+import { SOURCE_CODE_URL } from '../lib/constants'
 
 type Props = {
   preview?: boolean
@@ -17,25 +17,26 @@ const Alert = ({ preview }: Props) => (
       <div className="py-2 text-sm text-center">
         {preview ? (
           <>
-              This page is a preview.{' '}
+            This page is a preview.{' '}
             <a
               href="/api/exit-preview"
               className="underline transition-colors duration-200 hover:text-cyan"
             >
-                Click here
+              Click here
             </a>{' '}
-              to exit preview mode.
+            to exit preview mode.
           </>
         ) : (
           <>
-              The source code for this blog is{' '}
+            The source code for this website is{' '}
             <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
+              href={`${SOURCE_CODE_URL}`}
               className="underline transition-colors duration-200 hover:text-success"
+              target="_blank"
             >
-                available on GitHub
+              available on GitHub
             </a>
-              .
+            .
           </>
         )}
       </div>
