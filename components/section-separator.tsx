@@ -1,5 +1,3 @@
-const SectionSeparator = () => {
-  return <hr className="border-accent-2 mt-28 mb-24" />
-}
+const SectionSeparator = () => <hr className="mb-24 border-accent-2 mt-28" />
 
 export default SectionSeparator

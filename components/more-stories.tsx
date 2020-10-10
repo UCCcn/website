@@ -5,27 +5,25 @@ type Props = {
   posts: Post[]
 }
 
-const MoreStories = ({ posts }: Props) => {
-  return (
-    <section>
-      <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
+const MoreStories = ({ posts }: Props) => (
+  <section>
+    <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">
         More Stories
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 row-gap-20 md:row-gap-32 mb-32">
-        {posts.map((post) => (
-          <PostPreview
-            key={post.slug}
-            title={post.title}
-            coverImage={post.coverImage}
-            date={post.date}
-            author={post.author}
-            slug={post.slug}
-            excerpt={post.excerpt}
-          />
-        ))}
-      </div>
-    </section>
-  )
-}
+    </h2>
+    <div className="grid grid-cols-1 row-gap-20 mb-32 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 md:row-gap-32">
+      {posts.map((post) => (
+        <PostPreview
+          key={post.slug}
+          title={post.title}
+          coverImage={post.coverImage}
+          date={post.date}
+          author={post.author}
+          slug={post.slug}
+          excerpt={post.excerpt}
+        />
+      ))}
+    </div>
+  </section>
+)
 
 export default MoreStories
