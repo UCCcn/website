@@ -34,7 +34,7 @@
     "eslint-plugin-react": "7.21.4",
     "eslint-plugin-standard": "4.0.1",
     "postcss-preset-env": "6.7.0",
-    "tailwindcss": "1.8.12"
+    "tailwindcss": "1.8.13"
   },
   "license": "MIT"
 }
