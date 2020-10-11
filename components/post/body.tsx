@@ -1,4 +1,5 @@
-import markdownStyles from '../markdown-styles.module.css'
+import githubMarkdown from './github-markdown.module.css'
+import markdownStyles from './markdown-styles.module.css'
 
 type Props = {
   content: string
@@ -7,7 +8,7 @@ type Props = {
 const PostBody = ({ content }: Props) => (
   <div className="max-w-2xl mx-auto">
     <div
-      className={markdownStyles.markdown}
+      className={`${githubMarkdown['markdown-body']} ${markdownStyles.markdown}`}
       dangerouslySetInnerHTML={{ __html: content }}
     />
   </div>
