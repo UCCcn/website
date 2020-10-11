@@ -5,7 +5,7 @@ const Header = () => (
     <Link href="/">
       <a className="hover:underline">UCCcn</a>
     </Link>
-      .
+    .
   </h2>
 )
 

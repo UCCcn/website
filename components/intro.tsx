@@ -8,8 +8,7 @@ const Intro = () => (
       <a
         href="https://exuanbo.xyz/"
         className="underline transition-colors duration-200 hover:text-success"
-        target="_blank"
-      >
+        target="_blank">
         Exuanbo
       </a>
     </h4>
