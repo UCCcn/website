@@ -8,7 +8,11 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'standard'
+    'standard',
+    'prettier',
+    'prettier/@typescript-eslint',
+    'prettier/react',
+    'prettier/standard'
   ],
   settings: {
     react: {
@@ -22,10 +26,7 @@ module.exports = {
     },
     ecmaVersion: 12
   },
-  plugins: [
-    'react',
-    '@typescript-eslint'
-  ],
+  plugins: ['react', '@typescript-eslint'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-no-target-blank': 'off'
