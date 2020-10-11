@@ -11,7 +11,7 @@ const Layout = ({ preview, children }: Props) => (
   <>
     <Meta />
     <div className="min-h-screen">
-      <Alert preview={preview} />
+      {preview ? <Alert /> : null}
       <main>{children}</main>
     </div>
     <Footer />
