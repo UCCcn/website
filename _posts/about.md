@@ -10,17 +10,17 @@ ogImage:
   url: '/assets/about/cover.jpg'
 ---
 
-UCCcn 是一个由 University College Cork 爱尔兰科克大学本科 Computer Science 专业大一学生建立的组织，目前有两名成员。
+UCCcn 是一个由 University College Cork 爱尔兰科克大学本科 Computer Science 专业大一学生建立的组织，成员的加入没有任何门槛，我们欢迎任何有想法、有创意、有热情的同学参与进来。
 
 名字结尾的 'cn' 即可以表示 'China'，也可以表示 'Connect' 或 'Comunication Network'，它没有明确的含义。
 
-本站 JAMStack 前端~~自豪地~~采用 [Next.js](https://nextjs.org/)，用 Typescript 编写而成，后端托管在 [Vercel](https://vercel.com/)，源代码在 [github.com/UCCcn/website](https://github.com/UCCcn/website)
+本站 JAMStack 前端~~自豪地~~采用 [Next.js](https://nextjs.org/)，用 Typescript 编写，后端托管在 [Vercel](https://vercel.com/)，源代码在 [github.com/UCCcn/website](https://github.com/UCCcn/website)
 
-## 目的
+## 工作目标
 
-UCCcn 的成立是为了帮助所有科克大学在读以及计划申请本校的同学，主要通过平台信息分享和开源项目的形式。
+UCCcn 将主要通过平台信息分享和开源项目的形式，致力于帮助所有科克大学在读以及计划申请本校的同学。
 
-当前计划的项目有：
+当前计划中的项目有：
 
 1. UCC 微信小程序
    - 课程表
@@ -30,9 +30,11 @@ UCCcn 的成立是为了帮助所有科克大学在读以及计划申请本校�
    - DIY 申请
    - 科克生活
    - 学习资源
-   - 任何人都能参与编辑
+   - _任何人都能参与编辑与讨论_
 
-## 联系
+更多细节和内容会在成员讨论后确定。
+
+## 聯繫我們
 
 - 微信: exuanbo
 - 邮箱: exuanbo{at}protonmail{dot}com
