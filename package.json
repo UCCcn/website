@@ -45,5 +45,5 @@
     "prettier-config-standard": "1.0.1",
     "tailwindcss": "1.8.13"
   },
-  "license": "MIT"
+  "license": "GPL-3.0"
 }
