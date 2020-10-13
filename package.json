@@ -2,6 +2,7 @@
   "name": "website",
   "private": true,
   "scripts": {
+    "postinstall": "node scripts/pre-compile.js",
     "dev": "next",
     "build": "next build",
     "start": "next start",
