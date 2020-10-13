@@ -1,4 +1,4 @@
-import githubMarkdown from './github-markdown.module.css'
+import githubMarkdown from 'github-markdown-css/github-markdown.module.css'
 import markdownStyles from './markdown-styles.module.css'
 
 type Props = {
