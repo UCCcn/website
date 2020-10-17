@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  nextjs:
+    image: exuanbo/ucccn-website
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - $HOME/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - nextjs
+
+volumes:
+  caddy_data:
+  caddy_config:
