@@ -1,7 +1,5 @@
 # UCCcn website
 
-[![GitHub deployments](https://img.shields.io/github/deployments/UCCcn/website/Preview?label=Preview%20Deployment&style=flat-square)](https://website-git-dev.ucccn.vercel.app/)
-
 Made with Next.js and Typescript.
 
 ## Local development
