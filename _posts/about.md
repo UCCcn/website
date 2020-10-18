@@ -14,7 +14,7 @@ UCCcn 是一个由 University College Cork 爱尔兰科克大学本科 Computer 
 
 结尾的两个字母 'cn' 即可以表示 'China'，也可以表示 'Connect' 或 'Comunication Network'，它没有明确的含义。
 
-本站 JAMStack 前端~~自豪地~~采用 [Next.js](https://nextjs.org/)，用 Typescript 编写，后端托管在 [Vercel](https://vercel.com/)，源代码在 [github.com/UCCcn/website](https://github.com/UCCcn/website)
+本站 JAMStack 前端采用 [Next.js](https://nextjs.org/)，用 Typescript 编写。你可以在这里找到源代码 [github.com/UCCcn/website](https://github.com/UCCcn/website)
 
 ## 工作目标
 
