@@ -1,10 +1,10 @@
 import Author from './author'
 
-type PostType = {
+type PageType = {
   slug: string
   title: string
-  date: string
-  coverImage: string
+  date?: string
+  coverImage?: string
   author: Author
   excerpt: string
   ogImage: {
@@ -13,4 +13,4 @@ type PostType = {
   content: string
 }
 
-export default PostType
+export default PageType

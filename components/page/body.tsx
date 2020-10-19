@@ -5,7 +5,7 @@ type Props = {
   content: string
 }
 
-const PostBody = ({ content }: Props) => (
+const PageBody = ({ content }: Props) => (
   <div className="max-w-2xl mx-auto">
     <div
       className={`${githubMarkdown['markdown-body']} ${markdownStyles.markdown}`}
@@ -14,4 +14,4 @@ const PostBody = ({ content }: Props) => (
   </div>
 )
 
-export default PostBody
+export default PageBody
