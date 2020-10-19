@@ -7,7 +7,7 @@ const pageContentDirectory = join(process.cwd(), '_contents')
 const getPageSlugs = (): string[] => fs.readdirSync(pageContentDirectory)
 
 type Items = {
-  [key: string]: string
+  [key: string]: string | undefined
 }
 
 export const getPageBySlug = (slug: string, fields: string[] = []): Items => {
@@ -16,19 +16,18 @@ export const getPageBySlug = (slug: string, fields: string[] = []): Items => {
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
-  const items: Items = {}
-
-  // Ensure only the minimal needed data is exposed
-  fields.forEach(field => {
-    items[field] =
+  const items: Items = Object.fromEntries(
+    fields.map((field): [string, string | undefined] => [
+      field,
       field === 'slug'
         ? realSlug
         : field === 'content'
-        ? (items[field] = content)
-        : data[field]
-        ? (items[field] = data[field])
+        ? content
+        : data[field] !== undefined
+        ? data[field]
         : undefined
-  })
+    ])
+  )
 
   return items
 }
