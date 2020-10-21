@@ -27,7 +27,7 @@ const Page: NextPage<Props> = ({ page, pages, preview }: Props) => {
   }
 
   return (
-    <Layout preview={preview} pages={pages}>
+    <Layout preview={preview} pages={pages} pageSlug={page.slug}>
       <Container>
         <Header />
         {router.isFallback ? (

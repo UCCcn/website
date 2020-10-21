@@ -8,19 +8,21 @@ import PageType from '../types/page'
 type Props = {
   preview?: boolean
   pages: PageType[]
+  pageSlug?: string
   children: React.ReactNode
 }
 
 const Layout: React.FunctionComponent<Props> = ({
   preview,
   pages,
+  pageSlug,
   children
 }: Props) => (
   <>
     <Meta />
     <div className="flex flex-row">
       {preview ? <Alert /> : null}
-      <Sidebar pages={pages} />
+      <Sidebar pages={pages} pageSlug={pageSlug} />
       <main className="flex-grow">{children}</main>
     </div>
     <Footer />

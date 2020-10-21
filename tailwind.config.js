@@ -13,7 +13,10 @@ module.exports = {
         'accent-2': '#EAEAEA',
         'accent-7': '#333',
         success: '#0070f3',
-        cyan: '#79FFE1'
+        cyan: '#79FFE1',
+        uccYellow: '#FABF02',
+        uccBlue: '#005188',
+        uccRed: '#E31C17'
       },
       letterSpacing: {
         tighter: '-.04em'
@@ -23,6 +26,9 @@ module.exports = {
       },
       borderWidth: {
         24: '24px'
+      },
+      boxShadow: {
+        uccYellow: 'inset 0 -8px 0 #FABF02'
       }
     }
   }
