@@ -1,26 +1,26 @@
 .markdown {
   @apply text-lg leading-relaxed;
 
-  & h2 {
+  h2 {
     @apply text-3xl leading-snug;
   }
 
-  & h3 {
+  h3 {
     @apply text-2xl leading-snug;
   }
 
-  & ul {
+  ul {
     @apply list-disc;
 
-    & ul {
+    ul {
       list-style: circle;
     }
   }
 
-  & ol {
+  ol {
     @apply list-decimal;
 
-    & ul {
+    ul {
       list-style: circle;
     }
   }
