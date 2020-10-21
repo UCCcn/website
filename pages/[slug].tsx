@@ -59,7 +59,7 @@ type Params = {
   }
 }
 
-export async function getStaticProps({ params }: Params) {
+export const getStaticProps = async ({ params }: Params) => {
   const pages = getAllPages(['title', 'slug'])
 
   const page = getPageBySlug(params.slug, [
@@ -83,7 +83,7 @@ export async function getStaticProps({ params }: Params) {
   }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const pages = getAllPages(['slug'])
 
   return {
