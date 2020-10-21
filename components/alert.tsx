@@ -1,6 +1,6 @@
 import Container from './container'
 
-const Alert = () => (
+const Alert: React.FunctionComponent = () => (
   <div className="text-white border-b bg-accent-7 border-accent-7">
     <Container>
       <div className="py-2 text-sm text-center">

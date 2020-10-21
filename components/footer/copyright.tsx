@@ -7,7 +7,11 @@ type Props = {
   }
 }
 
-const Copyright = ({ year, name, license }: Props) => (
+const Copyright: React.FunctionComponent<Props> = ({
+  year,
+  name,
+  license
+}: Props) => (
   <span className="font-bold">
     @&nbsp;{`${year}`}&nbsp;{`${name}`}
     {license ? (

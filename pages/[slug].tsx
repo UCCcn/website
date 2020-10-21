@@ -1,49 +1,50 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
+import Head from 'next/head'
+import { NextPage } from 'next'
+
+import Layout from '../components/layout'
 import Container from '../components/container'
-import PostBody from '../components/page/body'
 import Header from '../components/header'
 import PostHeader from '../components/page/header'
-import Layout from '../components/layout'
-import { getPageBySlug, getAllPages } from '../lib/api'
 import PostTitle from '../components/page/title'
-import Head from 'next/head'
+import PostBody from '../components/page/body'
+
+import { getPageBySlug, getAllPages } from '../lib/api'
 import markdownToHtml from '../lib/markdownToHtml'
-import PostType from '../types/page'
+import PageType from '../types/page'
 
 type Props = {
-  post: PostType
-  morePosts: PostType[]
+  page: PageType
+  pages: PageType[]
   preview?: boolean
 }
 
-const Page = ({ post, preview }: Props) => {
+const Page: NextPage<Props> = ({ page, pages, preview }: Props) => {
   const router = useRouter()
-  if (!router.isFallback && !post?.slug) {
+  if (!router.isFallback && !page?.slug) {
     return <ErrorPage statusCode={404} />
   }
+
   return (
-    <Layout preview={preview}>
+    <Layout preview={preview} pages={pages}>
       <Container>
         <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
-          <>
-            <article className="mb-32">
-              <Head>
-                <title>{post.title} | UCCcn</title>
-                <meta property="og:image" content={post.ogImage.url} />
-              </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-              />
-              <PostBody content={post.content} />
-            </article>
-          </>
+          <article className="mb-32">
+            <Head>
+              <title>{page.title} | UCCcn</title>
+              <meta property="og:image" content={page.ogImage.url} />
+            </Head>
+            <PostHeader
+              title={page.title}
+              date={page.date}
+              author={page.author}
+            />
+            <PostBody content={page.content} />
+          </article>
         )}
       </Container>
     </Layout>
@@ -59,20 +60,22 @@ type Params = {
 }
 
 export async function getStaticProps({ params }: Params) {
+  const pages = getAllPages(['title', 'slug'])
+
   const page = getPageBySlug(params.slug, [
     'title',
     'date',
     'slug',
     'author',
     'content',
-    'ogImage',
-    'coverImage'
+    'ogImage'
   ])
   const content = await markdownToHtml(page.content || '')
 
   return {
     props: {
-      post: {
+      pages,
+      page: {
         ...page,
         content
       }

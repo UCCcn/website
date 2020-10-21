@@ -1,7 +1,6 @@
 ---
 title: '關於'
 excerpt: '我們是誰？我們在哪？我們要做什麼？'
-coverImage: '/assets/about/cover.jpg'
 date: '2020-10-11'
 author:
   name: Exuanbo

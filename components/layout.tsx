@@ -1,18 +1,27 @@
-import Alert from './alert'
-import Footer from './footer/'
 import Meta from './meta'
+import Alert from './alert'
+import Sidebar from './sidebar'
+import Footer from './footer/'
+
+import PageType from '../types/page'
 
 type Props = {
   preview?: boolean
+  pages: PageType[]
   children: React.ReactNode
 }
 
-const Layout = ({ preview, children }: Props) => (
+const Layout: React.FunctionComponent<Props> = ({
+  preview,
+  pages,
+  children
+}: Props) => (
   <>
     <Meta />
-    <div className="min-h-screen">
+    <div className="flex flex-row">
       {preview ? <Alert /> : null}
-      <main>{children}</main>
+      <Sidebar pages={pages} />
+      <main className="flex-grow">{children}</main>
     </div>
     <Footer />
   </>

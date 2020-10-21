@@ -3,7 +3,7 @@ import Icon from './icon'
 import Copyright from './copyright'
 import { GITHUB_URL } from '../../lib/constants'
 
-const Footer = () => (
+const Footer: React.FunctionComponent = () => (
   <footer className="border-t bg-accent-1 border-accent-2">
     <Container>
       <div className="flex flex-col">

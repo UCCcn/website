@@ -3,7 +3,7 @@ type Props = {
   path: string
 }
 
-const Icon = ({ url, path }: Props) => (
+const Icon: React.FunctionComponent<Props> = ({ url, path }: Props) => (
   <a href={`${url}`}>
     <svg
       className="w-6 h-6"
