@@ -7,11 +7,11 @@ const Footer: React.FunctionComponent = () => (
   <footer className="border-t bg-accent-1 border-accent-2">
     <Container>
       <div className="flex flex-col">
-        <div className="flex flex-col items-center py-12 lg:flex-row">
-          <div className="mb-5 text-xl font-bold leading-tight tracking-tighter text-center lg:text-4xl lg:pr-4 lg:w-1/2">
+        <div className="flex flex-col items-center py-8 lg:flex-row">
+          <div className="mb-4 text-xl font-bold leading-tight tracking-tighter text-center lg:text-2xl lg:pr-4 lg:w-1/2">
             Cross the sea, we&apos;re still you and me.
           </div>
-          <div className="flex flex-row items-center justify-center mb-10 space-x-2 lg:pl-4 lg:w-1/2">
+          <div className="flex flex-row items-center justify-center mb-4 space-x-2 lg:pl-4 lg:w-1/2">
             <Icon
               url="#"
               path="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3.374 17c-.897 0-1.626-.727-1.626-1.624s.729-1.624 1.626-1.624 1.626.727 1.626 1.624-.729 1.624-1.626 1.624zm3.885 0c-.03-3.022-2.485-5.474-5.511-5.504v-2.406c4.361.03 7.889 3.555 7.92 7.91h-2.409zm4.081 0c-.016-5.297-4.303-9.571-9.592-9.594v-2.406c6.623.023 11.985 5.384 12 12h-2.408z"
@@ -22,7 +22,7 @@ const Footer: React.FunctionComponent = () => (
             />
           </div>
         </div>
-        <div className="mb-10 text-center">
+        <div className="mb-8 text-center">
           <Copyright year={2020} name="UCCcn" />
         </div>
       </div>
