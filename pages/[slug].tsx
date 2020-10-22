@@ -16,17 +16,16 @@ import PageType from '../types/page'
 type Props = {
   page: PageType
   pages: PageType[]
-  preview?: boolean
 }
 
-const Page: NextPage<Props> = ({ page, pages, preview }: Props) => {
+const Page: NextPage<Props> = ({ page, pages }: Props) => {
   const router = useRouter()
   if (!router.isFallback && !page?.slug) {
     return <ErrorPage statusCode={404} />
   }
 
   return (
-    <Layout preview={preview} pages={pages} pageSlug={page.slug}>
+    <Layout pages={pages} pageSlug={page.slug}>
       <Container>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
