@@ -12,20 +12,17 @@ const Sidebar: React.FunctionComponent<Props> = ({
   pageSlug
 }: Props) => (
   <>
-    <aside className="flex flex-col w-1/5 text-center">
-      <nav className="sticky top-0 mt-32 ml-16 border-uccYellow border-l-24">
-        <ul className="mt-32 space-y-2 text-2xl font-medium">
-          <li>
-            <Link href="/">
-              <a className={cn({ 'shadow-uccYellow': !pageSlug })}>首頁</a>
-            </Link>
-          </li>
-          {pages.map(page => (
-            <li key={page.slug}>
+    <aside className="flex flex-col w-1/4 text-center">
+      <nav className="sticky top-0 mt-32 ml-16 border-ucc-yellow border-l-32">
+        <ul className="mt-48 space-y-4 text-4xl font-medium">
+          {[{ title: '首頁', slug: '' }].concat(pages).map(page => (
+            <li key={page.slug} className="mr-8">
               <Link href={`/${page.slug}`}>
                 <a
                   className={cn({
-                    'shadow-uccYellow': page.slug === pageSlug
+                    'shadow-ucc-yellow':
+                      page.slug === pageSlug ||
+                      (page.slug === '' && pageSlug === undefined)
                   })}>
                   {page.title}
                 </a>

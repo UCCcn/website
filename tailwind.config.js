@@ -14,9 +14,9 @@ module.exports = {
         'accent-7': '#333',
         success: '#0070f3',
         cyan: '#79FFE1',
-        uccYellow: '#FABF02',
-        uccBlue: '#005188',
-        uccRed: '#E31C17'
+        'ucc-yellow': '#FABF02',
+        'ucc-blue': '#005188',
+        'ucc-red': '#E31C17',
       },
       letterSpacing: {
         tighter: '-.04em'
@@ -25,10 +25,10 @@ module.exports = {
         tight: 1.2
       },
       borderWidth: {
-        24: '24px'
+        32: '32px'
       },
       boxShadow: {
-        uccYellow: 'inset 0 -8px 0 #FABF02'
+        'ucc-yellow': 'inset 0 -10px 0 #FABF02'
       }
     }
   }
