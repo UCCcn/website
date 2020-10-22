@@ -5,7 +5,6 @@ import { NextPage } from 'next'
 
 import Layout from '../components/layout'
 import Container from '../components/container'
-import Header from '../components/header'
 import PostHeader from '../components/page/header'
 import PostTitle from '../components/page/title'
 import PostBody from '../components/page/body'
@@ -29,7 +28,6 @@ const Page: NextPage<Props> = ({ page, pages, preview }: Props) => {
   return (
     <Layout preview={preview} pages={pages} pageSlug={page.slug}>
       <Container>
-        <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
