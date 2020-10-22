@@ -56,7 +56,9 @@ type Params = {
   }
 }
 
-export const getStaticProps = async ({ params }: Params) => {
+export const getStaticProps = async ({
+  params
+}: Params): Promise<{ props: Props }> => {
   const pages = getAllPages(['title', 'slug'])
 
   const page = getPageBySlug(params.slug, [

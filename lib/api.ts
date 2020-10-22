@@ -1,23 +1,23 @@
 import fs from 'fs'
-import { join } from 'path'
+import path from 'path'
 import matter from 'gray-matter'
 
-const pageContentDirectory = join(process.cwd(), '_contents')
+import PageType from '../types/page'
+type PageTypeKey = keyof PageType
+type Fields = Partial<keyof PageType>[]
+
+const pageContentDirectory = path.join(process.cwd(), '_contents')
 
 const getPageSlugs = (): string[] => fs.readdirSync(pageContentDirectory)
 
-type Items = {
-  [key: string]: string | undefined
-}
-
-export const getPageBySlug = (slug: string, fields: string[] = []): Items => {
+export const getPageBySlug = (slug: string, fields: Fields = []): PageType => {
   const realSlug = slug.replace(/\.md$/, '')
-  const fullPath = join(pageContentDirectory, `${realSlug}.md`)
+  const fullPath = path.join(pageContentDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
-  const items: Items = Object.fromEntries(
-    fields.map((field): [string, string | undefined] => [
+  const items = Object.fromEntries<PageType[PageTypeKey]>(
+    fields.map((field): [PageTypeKey, string | undefined] => [
       field,
       field === 'slug'
         ? realSlug
@@ -27,14 +27,14 @@ export const getPageBySlug = (slug: string, fields: string[] = []): Items => {
         ? data[field]
         : undefined
     ])
-  )
+  ) as PageType
 
   return items
 }
 
-export const getAllPages = (fields: string[] = []): Items[] => {
+export const getAllPages = (fields: Fields = []): PageType[] => {
   const slugs = getPageSlugs()
-  const posts = slugs.map((slug): Items => getPageBySlug(slug, fields))
+  const posts = slugs.map((slug): PageType => getPageBySlug(slug, fields))
   // sort posts by date in descending order
   // .sort((post1, post2): -1 | 1 => (post1.date > post2.date ? -1 : 1))
   return posts
