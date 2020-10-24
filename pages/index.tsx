@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { NextPage } from 'next'
+import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
 
 import Layout from '../components/layout'
 import Container from '../components/container'
@@ -10,9 +10,30 @@ import ArticleType from '../types/article'
 import { getAllArticles } from '../lib/api'
 import markdownToHtml from '../lib/markdownToHtml'
 
-type Props = {
-  articles: ArticleType[]
+export const getStaticProps: GetStaticProps = async () => {
+  const articles = getAllArticles([
+    'title',
+    'date',
+    'slug',
+    'author',
+    'content',
+    'ogImage'
+  ])
+
+  const articleContents = articles.map(async article => {
+    const content = await markdownToHtml(article.content || '')
+    const tansfromedArticle: ArticleType = {
+      ...article,
+      content
+    }
+
+    return tansfromedArticle
+  })
+
+  return { props: { articles: await Promise.all(articleContents) } }
 }
+
+type Props = InferGetStaticPropsType<typeof getStaticProps>
 
 const Index: NextPage<Props> = ({ articles }: Props) => {
   return (
@@ -29,25 +50,3 @@ const Index: NextPage<Props> = ({ articles }: Props) => {
 }
 
 export default Index
-
-export const getStaticProps = async () => {
-  const articles = getAllArticles([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'content',
-    'ogImage'
-  ])
-
-  const articleContents = articles.map(async article => {
-    const content = await markdownToHtml(article.content || '')
-
-    return {
-      ...article,
-      content
-    }
-  })
-
-  return { props: { articles: await Promise.all(articleContents) } }
-}
