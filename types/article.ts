@@ -1,6 +1,6 @@
 import Author from './author'
 
-type PageType = {
+type ArticleType = {
   slug: string
   title: string
   date?: string
@@ -12,4 +12,4 @@ type PageType = {
   content: string
 }
 
-export default PageType
+export default ArticleType

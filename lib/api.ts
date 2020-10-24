@@ -2,22 +2,25 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-import PageType from '../types/page'
-type PageTypeKey = keyof PageType
-type Fields = Partial<keyof PageType>[]
+import ArticleType from '../types/article'
+type ArticleTypeKey = keyof ArticleType
+type Fields = Partial<keyof ArticleType>[]
 
-const pageContentDirectory = path.join(process.cwd(), '_contents')
+const articleContentDirectory = path.join(process.cwd(), '_contents')
 
-const getPageSlugs = (): string[] => fs.readdirSync(pageContentDirectory)
+const getArticleSlugs = (): string[] => fs.readdirSync(articleContentDirectory)
 
-export const getPageBySlug = (slug: string, fields: Fields = []): PageType => {
+export const getArticleBySlug = (
+  slug: string,
+  fields: Fields = []
+): ArticleType => {
   const realSlug = slug.replace(/\.md$/, '')
-  const fullPath = path.join(pageContentDirectory, `${realSlug}.md`)
+  const fullPath = path.join(articleContentDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
-  const items = Object.fromEntries<PageType[PageTypeKey]>(
-    fields.map((field): [PageTypeKey, string | undefined] => [
+  const items = Object.fromEntries<ArticleType[ArticleTypeKey]>(
+    fields.map((field): [ArticleTypeKey, string | undefined] => [
       field,
       field === 'slug'
         ? realSlug
@@ -27,15 +30,17 @@ export const getPageBySlug = (slug: string, fields: Fields = []): PageType => {
         ? data[field]
         : undefined
     ])
-  ) as PageType
+  ) as ArticleType
 
   return items
 }
 
-export const getAllPages = (fields: Fields = []): PageType[] => {
-  const slugs = getPageSlugs()
-  const posts = slugs.map((slug): PageType => getPageBySlug(slug, fields))
+export const getAllArticles = (fields: Fields = []): ArticleType[] => {
+  const slugs = getArticleSlugs()
+  const articles = slugs.map(
+    (slug): ArticleType => getArticleBySlug(slug, fields)
+  )
   // sort posts by date in descending order
   // .sort((post1, post2): -1 | 1 => (post1.date > post2.date ? -1 : 1))
-  return posts
+  return articles
 }

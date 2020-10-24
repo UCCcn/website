@@ -5,7 +5,7 @@ type Props = {
   content: string
 }
 
-const PageBody: React.FunctionComponent<Props> = ({ content }: Props) => (
+const ArticleBody: React.FunctionComponent<Props> = ({ content }: Props) => (
   <div className="max-w-2xl mx-auto">
     <div
       className={`${githubMarkdown['markdown-body']} ${markdownStyles.markdown}`}
@@ -14,4 +14,4 @@ const PageBody: React.FunctionComponent<Props> = ({ content }: Props) => (
   </div>
 )
 
-export default PageBody
+export default ArticleBody

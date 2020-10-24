@@ -1,6 +1,6 @@
-import PageTitle from './title'
-import Avatar from '../avatar'
-import DateFormatter from '../date-formatter'
+import ArticleTitle from './title'
+import Avatar from './avatar'
+import DateFormatter from './date-formatter'
 import Author from '../../types/author'
 
 type Props = {
@@ -9,13 +9,13 @@ type Props = {
   author: Author
 }
 
-const PageHeader: React.FunctionComponent<Props> = ({
+const ArticleHeader: React.FunctionComponent<Props> = ({
   title,
   date,
   author
 }: Props) => (
   <>
-    <PageTitle>{title}</PageTitle>
+    <ArticleTitle>{title}</ArticleTitle>
     <div className="hidden md:block md:mb-12">
       <Avatar name={author.name} picture={author.picture} />
     </div>
@@ -32,4 +32,4 @@ const PageHeader: React.FunctionComponent<Props> = ({
   </>
 )
 
-export default PageHeader
+export default ArticleHeader
