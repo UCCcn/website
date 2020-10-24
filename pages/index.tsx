@@ -4,20 +4,18 @@ import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import Landing from '../components/landing'
-import Articles from '../components/article/'
-import ArticleType from '../types/article'
+import Articles, { ArticleType } from '../components/article/'
 
 import { getAllArticles } from '../lib/api'
 import markdownToHtml from '../lib/markdownToHtml'
 
 export const getStaticProps: GetStaticProps = async () => {
   const articles = getAllArticles([
+    'slug',
     'title',
     'date',
-    'slug',
-    'author',
-    'content',
-    'ogImage'
+    'ogImage',
+    'content'
   ])
 
   const articleContents = articles.map(async article => {

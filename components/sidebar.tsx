@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import cn from 'classnames'
-import ArticleType from '../types/article'
+import { ArticleType } from './article/'
 
 type Props = {
   articles: ArticleType[]

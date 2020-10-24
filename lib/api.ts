@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-import ArticleType from '../types/article'
+import { ArticleType } from '../components/article/'
 type ArticleTypeKey = keyof ArticleType
 type Fields = Partial<keyof ArticleType>[]
 

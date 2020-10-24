@@ -1,8 +1,7 @@
 import Meta from './meta'
 import Sidebar from './sidebar'
 import Footer from './footer/'
-
-import ArticleType from '../types/article'
+import { ArticleType } from './article/'
 
 type Props = {
   articles: ArticleType[]
