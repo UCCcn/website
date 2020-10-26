@@ -1,0 +1,15 @@
+.dockerignore
+.editorconfig
+.eslintrc.js
+.git
+.github
+.gitignore
+.next
+.nvmrc
+.prettierignore
+.prettierrc.js
+
+Dockerfile
+LICENSE
+README.md
+node_modules
