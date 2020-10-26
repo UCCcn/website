@@ -27,8 +27,9 @@ module.exports = {
     },
     ecmaVersion: 12
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
+    'prettier/prettier': 'error',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-no-target-blank': 'off'
   }
